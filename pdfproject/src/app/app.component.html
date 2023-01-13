@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="leftcontainer col-6">
+    <pdf-viewer
+      [src]="pdfSrc"
+      class="pdf-viewer"
+      (after-load-complete)="loadComplete($event)"
+    ></pdf-viewer>
+  </div>
+  <div class="rightContainer col-6">
+    <!-- <button (click)="postPdf()">post</button> -->
+    <img style="height: 50%;" [src]="url">
+    <div class="scrollable" style="overflow-y: scroll; height:200px; margin:50px; padding: 50px;">
+        {{Output}}
+    </div>
+  </div>
+</div>
