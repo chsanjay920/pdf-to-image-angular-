@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using PDFtoImage;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -20,32 +21,21 @@ namespace apiForPdfToPng.Controllers
         [HttpPost]
         public byte[] Post(IFormCollection formData)
         {
-            byte[] pdfByteArray = null;
             try
             {
+                byte[] pdfByteArray = null;
                 var files = formData.Files;
-                foreach (var file in files) 
-                {
-                    if (file.Length > 0)
-                    {
-                        using var memoryStream = new MemoryStream();
-                        file!.CopyToAsync(memoryStream);
-                        pdfByteArray = memoryStream.ToArray();
-                    }
-                }
-                        var imagesList = Freeware.Pdf2Png.ConvertAllPages(pdfByteArray);
-                
-                return imagesList[0];
-
+                MemoryStream memoryStream = new MemoryStream();
+                files[0].CopyTo(memoryStream);
+                MemoryStream s = new MemoryStream();
+                Conversion.SavePng(s, memoryStream, null, 0, 300, null, null, true, true);
+                return s.ToArray();
             }
-            catch (Exception)
+            catch(Exception e)
             {
                 throw;
             }
-            //return Ok();
         }
-
-
     }
 }
 
@@ -64,3 +54,6 @@ namespace apiForPdfToPng.Controllers
 //        image.Save("output.png", ImageFormat.Png);
 //    }
 //}
+
+
+// var imagesList = Freeware.Pdf2Png.ConvertAllPages(pdfByteArray);

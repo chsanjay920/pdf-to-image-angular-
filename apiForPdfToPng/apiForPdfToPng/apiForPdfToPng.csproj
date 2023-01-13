@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Freeware.Pdf2Png" Version="1.0.1" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Cors" Version="5.2.9" />
+    <PackageReference Include="PDFtoImage" Version="2.1.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 

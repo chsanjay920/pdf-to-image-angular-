@@ -2,6 +2,71 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "bblanchon.PDFium.Linux/105.0.5187": {
+        "type": "package",
+        "runtimeTargets": {
+          "runtimes/linux-arm/native/libpdfium.so": {
+            "assetType": "native",
+            "rid": "linux-arm"
+          },
+          "runtimes/linux-arm64/native/libpdfium.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-musl-x64/native/libpdfium.so": {
+            "assetType": "native",
+            "rid": "linux-musl-x64"
+          },
+          "runtimes/linux-musl-x86/native/libpdfium.so": {
+            "assetType": "native",
+            "rid": "linux-musl-x86"
+          },
+          "runtimes/linux-x64/native/libpdfium.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x86/native/libpdfium.so": {
+            "assetType": "native",
+            "rid": "linux-x86"
+          }
+        }
+      },
+      "bblanchon.PDFium.macOS/105.0.5187": {
+        "type": "package",
+        "runtimeTargets": {
+          "runtimes/osx-arm64/native/libpdfium.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-x64/native/libpdfium.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          }
+        }
+      },
+      "bblanchon.PDFium.Win32/105.0.5187": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/pdfium.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/pdfium.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/pdfium.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
       "Freeware.Pdf2Png/1.0.1": {
         "type": "package",
         "dependencies": {
@@ -257,6 +322,24 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "PDFtoImage/2.1.2": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.0",
+          "SkiaSharp.NativeAssets.Linux.NoDependencies": "2.88.0",
+          "SkiaSharp.NativeAssets.Win32": "2.88.0",
+          "SkiaSharp.NativeAssets.macOS": "2.88.0",
+          "bblanchon.PDFium.Linux": "105.0.5187",
+          "bblanchon.PDFium.Win32": "105.0.5187",
+          "bblanchon.PDFium.macOS": "105.0.5187"
+        },
+        "compile": {
+          "lib/net6.0/PDFtoImage.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/PDFtoImage.dll": {}
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
         "type": "package",
         "runtimeTargets": {
@@ -425,6 +508,88 @@
           "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so": {
             "assetType": "native",
             "rid": "ubuntu.16.10-x64"
+          }
+        }
+      },
+      "SkiaSharp/2.88.0": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp.NativeAssets.Win32": "2.88.0",
+          "SkiaSharp.NativeAssets.macOS": "2.88.0",
+          "System.Memory": "4.5.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/SkiaSharp.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SkiaSharp.dll": {}
+        }
+      },
+      "SkiaSharp.NativeAssets.Linux.NoDependencies/2.88.0": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "linux-arm"
+          },
+          "runtimes/linux-arm64/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-musl-x64/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "linux-musl-x64"
+          },
+          "runtimes/linux-x64/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.macOS/2.88.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.3/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/osx/native/libSkiaSharp.dylib": {
+            "assetType": "native",
+            "rid": "osx"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.Win32/2.88.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.3/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/libSkiaSharp.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/libSkiaSharp.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/libSkiaSharp.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
           }
         }
       },
@@ -928,6 +1093,15 @@
         },
         "runtime": {
           "lib/netstandard1.6/System.Linq.Expressions.dll": {}
+        }
+      },
+      "System.Memory/4.5.3": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
         }
       },
       "System.Net.Http/4.3.0": {
@@ -1684,6 +1858,56 @@
     }
   },
   "libraries": {
+    "bblanchon.PDFium.Linux/105.0.5187": {
+      "sha512": "Ri/Sqi+LTKJof1T+akKmsywtbDlq1KkZPArSU9TV2zSshhJ5cCVBAXdRyXc3XKimITDPNPWAlhjvBbqmYHwiOg==",
+      "type": "package",
+      "path": "bblanchon.pdfium.linux/105.0.5187",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bblanchon.pdfium.linux.105.0.5187.nupkg.sha512",
+        "bblanchon.pdfium.linux.nuspec",
+        "icon.png",
+        "runtimes/linux-arm/native/libpdfium.so",
+        "runtimes/linux-arm64/native/libpdfium.so",
+        "runtimes/linux-musl-x64/native/libpdfium.so",
+        "runtimes/linux-musl-x86/native/libpdfium.so",
+        "runtimes/linux-x64/native/libpdfium.so",
+        "runtimes/linux-x86/native/libpdfium.so"
+      ]
+    },
+    "bblanchon.PDFium.macOS/105.0.5187": {
+      "sha512": "oJTGxOfCrZ/48sckJkevKDpaLTtErjJoM92ZginD9GZjxa0AgRVPLz8eAOoCEplNEsL/6MWWamwqJvO0BvPlwg==",
+      "type": "package",
+      "path": "bblanchon.pdfium.macos/105.0.5187",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bblanchon.pdfium.macos.105.0.5187.nupkg.sha512",
+        "bblanchon.pdfium.macos.nuspec",
+        "icon.png",
+        "runtimes/osx-arm64/native/libpdfium.dylib",
+        "runtimes/osx-x64/native/libpdfium.dylib"
+      ]
+    },
+    "bblanchon.PDFium.Win32/105.0.5187": {
+      "sha512": "g5opqYDGwYZ51qWdPfpK7VZu+VD9+JcLRC5r81xaHj0bdlyHK5LhIaVxLGB9ecrjXhvhak+ck2Rx0XiCgzy/vg==",
+      "type": "package",
+      "path": "bblanchon.pdfium.win32/105.0.5187",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bblanchon.pdfium.win32.105.0.5187.nupkg.sha512",
+        "bblanchon.pdfium.win32.nuspec",
+        "build/net461/bblanchon.PDFium.Win32.targets",
+        "buildTransitive/net461/bblanchon.PDFium.Win32.targets",
+        "icon.png",
+        "lib/netstandard2.0/_._",
+        "runtimes/win-arm64/native/pdfium.dll",
+        "runtimes/win-x64/native/pdfium.dll",
+        "runtimes/win-x86/native/pdfium.dll"
+      ]
+    },
     "Freeware.Pdf2Png/1.0.1": {
       "sha512": "ELmRFPLF5vh+OsaUNpdkXpi+Twga7UIov6SsQvU3kljeAkpI8kiH8WYrKdyJNDZbcFd0NdqJuDztGOCWGOpmCw==",
       "type": "package",
@@ -2018,6 +2242,29 @@
         "newtonsoft.json.bson.nuspec"
       ]
     },
+    "PDFtoImage/2.1.2": {
+      "sha512": "3ASYemtQaamroetLM+FocAFYnMlC8+o/DlChhx/Sys//g3DJ9DBjoR8SuP3VqCWy8oeFnsbk4O+LzlgRkH+VBw==",
+      "type": "package",
+      "path": "pdftoimage/2.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon_128.png",
+        "README.md",
+        "lib/monoandroid10.0/PDFtoImage.dll",
+        "lib/monoandroid10.0/PDFtoImage.xml",
+        "lib/net462/PDFtoImage.dll",
+        "lib/net462/PDFtoImage.xml",
+        "lib/net6.0-android31.0/PDFtoImage.dll",
+        "lib/net6.0-android31.0/PDFtoImage.xml",
+        "lib/net6.0/PDFtoImage.dll",
+        "lib/net6.0/PDFtoImage.xml",
+        "lib/netcoreapp3.1/PDFtoImage.dll",
+        "lib/netcoreapp3.1/PDFtoImage.xml",
+        "pdftoimage.2.1.2.nupkg.sha512",
+        "pdftoimage.nuspec"
+      ]
+    },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "sha512": "HdSSp5MnJSsg08KMfZThpuLPJpPwE5hBXvHwoKWosyHHfe8Mh5WKT0ylEOf6yNzX6Ngjxe4Whkafh5q7Ymac4Q==",
       "type": "package",
@@ -2240,6 +2487,133 @@
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.nuspec",
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
+      ]
+    },
+    "SkiaSharp/2.88.0": {
+      "sha512": "OKBrwZ4TdRjPjl2tVFbcakyNZBI9zBGFzZKr6DbhgybVpjiBMvIQbbbN4Wfl0lts0TJ5AwHDr6EO7zusJJOamQ==",
+      "type": "package",
+      "path": "skiasharp/2.88.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "THIRD-PARTY-NOTICES.txt",
+        "interactive-extensions/dotnet/SkiaSharp.DotNet.Interactive.dll",
+        "lib/monoandroid1.0/SkiaSharp.dll",
+        "lib/monoandroid1.0/SkiaSharp.pdb",
+        "lib/monoandroid1.0/SkiaSharp.xml",
+        "lib/net462/SkiaSharp.dll",
+        "lib/net462/SkiaSharp.pdb",
+        "lib/net462/SkiaSharp.xml",
+        "lib/net6.0-android30.0/SkiaSharp.dll",
+        "lib/net6.0-android30.0/SkiaSharp.pdb",
+        "lib/net6.0-android30.0/SkiaSharp.xml",
+        "lib/net6.0-ios13.6/SkiaSharp.dll",
+        "lib/net6.0-ios13.6/SkiaSharp.pdb",
+        "lib/net6.0-ios13.6/SkiaSharp.xml",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.dll",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.pdb",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.xml",
+        "lib/net6.0-macos10.15/SkiaSharp.dll",
+        "lib/net6.0-macos10.15/SkiaSharp.pdb",
+        "lib/net6.0-macos10.15/SkiaSharp.xml",
+        "lib/net6.0-tvos13.4/SkiaSharp.dll",
+        "lib/net6.0-tvos13.4/SkiaSharp.pdb",
+        "lib/net6.0-tvos13.4/SkiaSharp.xml",
+        "lib/netstandard1.3/SkiaSharp.dll",
+        "lib/netstandard1.3/SkiaSharp.pdb",
+        "lib/netstandard1.3/SkiaSharp.xml",
+        "lib/netstandard2.0/SkiaSharp.dll",
+        "lib/netstandard2.0/SkiaSharp.pdb",
+        "lib/netstandard2.0/SkiaSharp.xml",
+        "lib/tizen40/SkiaSharp.dll",
+        "lib/tizen40/SkiaSharp.pdb",
+        "lib/tizen40/SkiaSharp.xml",
+        "lib/uap10.0.10240/SkiaSharp.dll",
+        "lib/uap10.0.10240/SkiaSharp.pdb",
+        "lib/uap10.0.10240/SkiaSharp.xml",
+        "lib/uap10.0.16299/SkiaSharp.dll",
+        "lib/uap10.0.16299/SkiaSharp.pdb",
+        "lib/uap10.0.16299/SkiaSharp.xml",
+        "lib/xamarinios1.0/SkiaSharp.dll",
+        "lib/xamarinios1.0/SkiaSharp.pdb",
+        "lib/xamarinios1.0/SkiaSharp.xml",
+        "lib/xamarinmac2.0/SkiaSharp.dll",
+        "lib/xamarinmac2.0/SkiaSharp.pdb",
+        "lib/xamarinmac2.0/SkiaSharp.xml",
+        "lib/xamarintvos1.0/SkiaSharp.dll",
+        "lib/xamarintvos1.0/SkiaSharp.pdb",
+        "lib/xamarintvos1.0/SkiaSharp.xml",
+        "lib/xamarinwatchos1.0/SkiaSharp.dll",
+        "lib/xamarinwatchos1.0/SkiaSharp.pdb",
+        "lib/xamarinwatchos1.0/SkiaSharp.xml",
+        "skiasharp.2.88.0.nupkg.sha512",
+        "skiasharp.nuspec"
+      ]
+    },
+    "SkiaSharp.NativeAssets.Linux.NoDependencies/2.88.0": {
+      "sha512": "Nt1eSglEAGxFPdTMk8nAqyjFEEyRcez8qQ/YpismWrCp8ood1LekfzznxEIr6StD8G6pTXmjDkCVpfFthjTMOQ==",
+      "type": "package",
+      "path": "skiasharp.nativeassets.linux.nodependencies/2.88.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/net462/SkiaSharp.NativeAssets.Linux.NoDependencies.targets",
+        "buildTransitive/net462/SkiaSharp.NativeAssets.Linux.NoDependencies.targets",
+        "lib/net462/_._",
+        "lib/netstandard1.3/_._",
+        "runtimes/linux-arm/native/libSkiaSharp.so",
+        "runtimes/linux-arm64/native/libSkiaSharp.so",
+        "runtimes/linux-musl-x64/native/libSkiaSharp.so",
+        "runtimes/linux-x64/native/libSkiaSharp.so",
+        "skiasharp.nativeassets.linux.nodependencies.2.88.0.nupkg.sha512",
+        "skiasharp.nativeassets.linux.nodependencies.nuspec"
+      ]
+    },
+    "SkiaSharp.NativeAssets.macOS/2.88.0": {
+      "sha512": "tfcr1Bnye1lsBbsskqtlkZrFDBZfIEfJoGzJ6nnJF1sSDs8zzdiuL7PjEUDEh5iHb6Wbc0la9f/OIPnUcW7KFg==",
+      "type": "package",
+      "path": "skiasharp.nativeassets.macos/2.88.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/net462/SkiaSharp.NativeAssets.macOS.targets",
+        "build/net6.0-macos10.15/SkiaSharp.NativeAssets.macOS.targets",
+        "build/xamarinmac2.0/SkiaSharp.NativeAssets.macOS.targets",
+        "buildTransitive/net462/SkiaSharp.NativeAssets.macOS.targets",
+        "buildTransitive/net6.0-macos10.15/SkiaSharp.NativeAssets.macOS.targets",
+        "buildTransitive/xamarinmac2.0/SkiaSharp.NativeAssets.macOS.targets",
+        "lib/net462/_._",
+        "lib/net6.0-macos10.15/_._",
+        "lib/netstandard1.3/_._",
+        "lib/xamarinmac2.0/_._",
+        "runtimes/osx/native/libSkiaSharp.dylib",
+        "skiasharp.nativeassets.macos.2.88.0.nupkg.sha512",
+        "skiasharp.nativeassets.macos.nuspec"
+      ]
+    },
+    "SkiaSharp.NativeAssets.Win32/2.88.0": {
+      "sha512": "R//VHCO/FTBtDMyYTzazuqLU8QOczapgf9FIC6Hw2SodP79CYu27+fdGS0fL9bt1qKCCitlI22QWSniPLG8YJg==",
+      "type": "package",
+      "path": "skiasharp.nativeassets.win32/2.88.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/net462/SkiaSharp.NativeAssets.Win32.targets",
+        "buildTransitive/net462/SkiaSharp.NativeAssets.Win32.targets",
+        "lib/net462/_._",
+        "lib/netstandard1.3/_._",
+        "runtimes/win-arm64/native/libSkiaSharp.dll",
+        "runtimes/win-x64/native/libSkiaSharp.dll",
+        "runtimes/win-x86/native/libSkiaSharp.dll",
+        "skiasharp.nativeassets.win32.2.88.0.nupkg.sha512",
+        "skiasharp.nativeassets.win32.nuspec"
       ]
     },
     "Swashbuckle.AspNetCore/6.2.3": {
@@ -3735,6 +4109,27 @@
         "runtimes/aot/lib/netcore50/System.Linq.Expressions.dll",
         "system.linq.expressions.4.3.0.nupkg.sha512",
         "system.linq.expressions.nuspec"
+      ]
+    },
+    "System.Memory/4.5.3": {
+      "sha512": "3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
+      "type": "package",
+      "path": "system.memory/4.5.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.1/System.Memory.dll",
+        "lib/netstandard1.1/System.Memory.xml",
+        "lib/netstandard2.0/System.Memory.dll",
+        "lib/netstandard2.0/System.Memory.xml",
+        "ref/netcoreapp2.1/_._",
+        "system.memory.4.5.3.nupkg.sha512",
+        "system.memory.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Net.Http/4.3.0": {
@@ -5948,6 +6343,7 @@
     "net6.0": [
       "Freeware.Pdf2Png >= 1.0.1",
       "Microsoft.AspNet.WebApi.Cors >= 5.2.9",
+      "PDFtoImage >= 2.1.2",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -6002,6 +6398,10 @@
           "Microsoft.AspNet.WebApi.Cors": {
             "target": "Package",
             "version": "[5.2.9, )"
+          },
+          "PDFtoImage": {
+            "target": "Package",
+            "version": "[2.1.2, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

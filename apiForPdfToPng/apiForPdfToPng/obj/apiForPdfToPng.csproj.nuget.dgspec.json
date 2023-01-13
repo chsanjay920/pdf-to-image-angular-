@@ -52,6 +52,10 @@
               "target": "Package",
               "version": "[5.2.9, )"
             },
+            "PDFtoImage": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
