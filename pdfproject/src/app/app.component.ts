@@ -17,13 +17,13 @@ export class AppComponent {
   Output = '';
   FinalPdf: any;
   url: any;
+  pdf: any;
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) {}
 
   public async postPdf(final: any) {
-    let blob = new Blob([final], { type: 'application/octet-stream' });
+    let blob = new Blob([final], { type: 'application/pdf' });
     let formData = new FormData();
     formData.append('file', blob);
-
     this.http.post('https://localhost:7011/api/PdfToPng', formData).subscribe(
       (response) => {
         console.log(response);
@@ -48,7 +48,6 @@ export class AppComponent {
         .then((ann) => {
           currentPageInputsAnn = ann;
           console.log(ann);
-          currentPageInputsAnn[0]['fieldValue'] = 'sanjay';
           currentPageInputsAnn.forEach((element: any) => {
             dummyarray.push({
               feildname: element['fieldName'],
@@ -57,19 +56,17 @@ export class AppComponent {
             });
           });
           jsonData = JSON.stringify(dummyarray);
-          // console.log(dummyarray);
           this.Output = jsonData;
         });
-      // pdf.getAttachments().then((data) => {
-      //   console.log(data);
-      // });
-      
-      pdf.saveDocument().then((data) => {
-        // console.log(data);
-      
+      pdf.saveDocument().then((data: any) => {
         this.FinalPdf = data;
-        //this.postPdf(data);
       });
+      this.pdf = pdf;
     }
+  }
+  public save() {
+    this.pdf.saveDocument().then((data: any) => {
+     this.postPdf(data);
+    });
   }
 }

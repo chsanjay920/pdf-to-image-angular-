@@ -7,8 +7,8 @@
     ></pdf-viewer>
   </div>
   <div class="rightContainer col-6">
-    <!-- <button (click)="postPdf()">post</button> -->
-    <img style="height: 50%;" [src]="url">
+    <button (click)="save()">save</button>
+    <img style="height: 80%; width: 100%;" [src]="url">
     <div class="scrollable" style="overflow-y: scroll; height:200px; margin:50px; padding: 50px;">
         {{Output}}
     </div>
